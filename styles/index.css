@@ -50,6 +50,11 @@ body {
 
 .tasks {
   display: none;
+  height:250px;
+  width: 435px;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .task__item {
