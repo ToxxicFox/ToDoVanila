@@ -18,6 +18,18 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.today {
+  font-size: 42px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #424242;
+  margin-bottom: 36px;
 }
 
 .container {
@@ -48,6 +60,16 @@ body {
   background-color: #e8e8e8;
 }
 
+.counter {
+  font-size: 10px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
 .tasks {
   display: none;
   height:250px;
@@ -55,6 +77,20 @@ body {
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.tasks::-webkit-scrollbar{
+  width: 3px;
+  background: #fff;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 1px;
+}
+
+.tasks:first {
+  margin-top: 18px;
 }
 
 .task__item {
@@ -65,8 +101,7 @@ body {
   height: 40px;
   margin-left: 16px;
   margin-right: 16px;
-  margin-top: 18px;
-  margin-bottom: 8px;
+  margin-top: 8px;
   background: #f1f2f6;
   border-radius: 8px;
 }

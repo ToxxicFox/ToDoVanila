@@ -4,6 +4,7 @@ const end = document.querySelector('.end')
 const circle = document.querySelector('.gauge')
 const $gauge = document.querySelector('.gauge')
 const input = document.querySelector('.add__btn')
+const countTask = document.querySelector('.counter')
 
 let tasksState = JSON.parse(localStorage.getItem('tasks')) || []
 
@@ -76,18 +77,22 @@ function renderSection() {
       tasks.style.display = 'none'
       circle.style.display = 'none'
       end.style.display = 'block'
+      countTask.style.display = 'none'
     } else {
       start.style.display = 'none'
       tasks.style.display = 'block'
       circle.style.display = 'block'
       end.style.display = 'none'
+      countTask.style.display = 'flex'
       renderTasks()
+      taskToDo()
     }
   } else {
     start.style.display = 'block'
     tasks.style.display = 'none'
     circle.style.display = 'none'
     end.style.display = 'none'
+    countTask.style.display = 'none'
   }
 }
 
@@ -101,6 +106,13 @@ function renderProgress() {
   }
   saveState(state)
   setGaugePercent($gauge, percent)
+}
+
+function taskToDo() {
+  const nonCompletedTaskCount = tasksState.filter((task) => task.checked == false).length
+  countTask.innerHTML = `
+  ${nonCompletedTaskCount} tasks to do
+  `
 }
 
 renderSection()

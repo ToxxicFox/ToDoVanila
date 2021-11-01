@@ -4,6 +4,7 @@
   display: none;
   user-select: none;
   position: relative;
+  margin-top: 26px;
 }
 
 .gauge__average {
